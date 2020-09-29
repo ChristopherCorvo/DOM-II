@@ -1,15 +1,16 @@
 // Your code goes here
 //   * mouseover` ---- Done
 //   * mouseleave ---- Done
-//   * `keydown`
+//   * `keydown` --- Done
 //   * `wheel`
 //   * `load`
 //   * `focus`
-//   * `resize`
+//   * `resize` ---DONE
 //   * `scroll`
 //   * `select`
-//   * `dblclick`
+//   * `dblclick` ---Done
 //   * `drag / drop`
+//   * click -----Done
 
 // mouseover to make navigation bigger and mouseleave to return to initial fontSize
 const navLinks = document.querySelectorAll('.nav-link');
@@ -24,23 +25,37 @@ navLinks.forEach(item => {
     })
 })
 
-// used scroll to change the navigation bar's background color to mistyrose
-
 
 // keydown to make navbar change color
 
 const navbarKey = document.querySelector('.main-navigation');
-
-// document.addEventListener('keydown', function(event) {
-//     if(event.code === 38){
-//         // navbarKey.style.backgroundColor = 'black';
-//         console.log("hello")
-//     }
-// })
 
 document.addEventListener('keydown', function (event) {
     if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
     console.log("hello")
     navbarKey.style.backgroundColor = "mistyrose";
   }
+})
+
+// when the window is resized it sends an alert 
+
+window.addEventListener('resize', function(element) {
+    alert("This website looks best at it's default size")
+})
+
+// use dblclick to make images larger
+
+const imageSelector = document.querySelectorAll('img');
+console.log(imageSelector);
+
+imageSelector.forEach(item => {
+    item.addEventListener('dblclick', function(element) {
+        item.style.transform = "scale(1.5)"
+    })
+})
+
+imageSelector.forEach(item => {
+    item.addEventListener('click', function(element) {
+        item.style.transform = "initial"
+    })
 })
