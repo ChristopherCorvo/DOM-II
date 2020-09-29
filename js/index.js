@@ -26,11 +26,21 @@ navLinks.forEach(item => {
 
 // used scroll to change the navigation bar's background color to mistyrose
 
-const navSection = document.querySelector('.main-navigation')
 
-navSection.addEventListener('scroll', function(){
-    navSection.style.backgroundColor = "black";
+// keydown to make navbar change color
+
+const navbarKey = document.querySelector('.main-navigation');
+
+// document.addEventListener('keydown', function(event) {
+//     if(event.code === 38){
+//         // navbarKey.style.backgroundColor = 'black';
+//         console.log("hello")
+//     }
+// })
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+    console.log("hello")
+    navbarKey.style.backgroundColor = "mistyrose";
+  }
 })
-
-
-
